@@ -24,7 +24,8 @@ app.use(
 
     //这里如果设置成true的意思是只允许https访问，更加安全
     //但最好用环境变量，这样不会影响测试
-    secure: process.env.NODE_ENV !== 'test'
+    // secure: process.env.NODE_ENV !== 'test'
+    secure: false,
   })
 );
 
