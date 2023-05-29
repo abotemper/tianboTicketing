@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-depl
+spec:
+  replicas: 1
+  # 这里的选择器是部署如何找到要管理的单元集
+  selector:
+    matchLabels:
+      app: client
+  # 模版部分准确描述了次部署创建和管理的每个单元的行为方式
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: client
+          image: us.gcr.io/ticketing-dev-385109/client
+# 这之后，再部署之后，我们还需要一个服务来允许集群内的请求访问此单元
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-srv
+spec:
+  selector:
+    app: client
+  ports:
+    - name: client
+      protocol: TCP
+      # next.js 将我们的前端port默认设置为3000
+      port: 3000
+      targetPort: 3000

@@ -1,0 +1,5 @@
+us.gcr.io/ticketing-dev-385109/auth
+
+ingress yaml :apiversion :networking.k8s.io/v1
+
+tianboalbert
