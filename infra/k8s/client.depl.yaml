@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: us.gcr.io/ticketing-dev-385109/client
+          image: tianboalbert/client
 # 这之后，再部署之后，我们还需要一个服务来允许集群内的请求访问此单元
 
 ---
