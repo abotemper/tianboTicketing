@@ -4,7 +4,7 @@
 #   googleCloudBuild:
 #     projectId: ticketing-dev-385109
 #   artifacts:
-#     - image: us.gcr.io/ticketing-dev-385109/auth
+#     - image: tianboalbert/auth
 #       context: auth
 #       sync:
 #         manual:
